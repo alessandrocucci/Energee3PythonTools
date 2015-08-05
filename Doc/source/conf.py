@@ -47,11 +47,12 @@ source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
+import time
 
 # General information about the project.
 project = u'Energee3 Python Tools'
-copyright = u'2015, Alessandro Cucci'
 author = u'Alessandro Cucci'
+copyright = u'%s, Energee3 srl' % time.strftime('%Y')
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -244,7 +245,7 @@ latex_documents = [
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-#latex_appendices = []
+latex_appendices = ['copyright']
 
 # If false, no module index is generated.
 #latex_domain_indices = True

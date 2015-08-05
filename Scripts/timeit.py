@@ -2,6 +2,8 @@
 
 Applicare il decoratore @timeit alla funzione di cui si vuole misurare il tempo di esecuzione,
 poi chiamarla/e nel metodo main
+
+Usare solo per python fino alla 2.7
 """
 import time
 

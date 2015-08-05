@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scripts/timeit.py &mdash; Energee3 Python Tools 0.0.1 documentazione</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="author" title="A proposito di questi documenti" href="../about.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Energee3 Python Tools 0.0.1 documentazione" href="../index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="scripts-timeit-py">
+<h1>Scripts/timeit.py<a class="headerlink" href="#scripts-timeit-py" title="Link a questa intestazione">¶</a></h1>
+<p>Timeit è uno script che potrebbe tornarci utile quando vogliamo misurare il tempo di esecuzione di una o più funzioni.
+Personalmente lo uso spesso per confrontare due o più metodi che restituiscono la stessa cosa per vedere quale è
+il più performante.</p>
+<p>NB Lo script, così com&#8217;è, è valido solo per <strong>Python 2.7</strong>, non sarà tuttavia impegnativo modificarlo per farlo girare
+sulle vesioni successive.</p>
+<p>Il codice consiste nel creare un decoratore che stampi il tempo di esecuzione della funzione decorata:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">timed</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="n">te</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+        <span class="k">print</span> <span class="s">&#39;</span><span class="si">%r</span><span class="s"> (</span><span class="si">%r</span><span class="s">, </span><span class="si">%r</span><span class="s">) </span><span class="si">%2.6f</span><span class="s"> sec&#39;</span> <span class="o">%</span> \
+              <span class="p">(</span><span class="n">method</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">te</span><span class="o">-</span><span class="n">ts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">return</span> <span class="n">timed</span>
+</pre></div>
+</div>
+<p>Molto semplice, in ts (time start) salviamo il tempo nell&#8217;istante prima di chiamare il metodo,
+poi, una volta eseguito il metodo, salviamo in te (time end) il nuovo tempo. A questo punto stamperemo le informazioni
+che ci servono, vale a dire:</p>
+<ul class="simple">
+<li>nome del metodo decorato</li>
+<li>argomenti passati</li>
+<li>keywords</li>
+<li><strong>tempo di esecuzione</strong> (te-ti)</li>
+</ul>
+<div class="section" id="per-i-giovani-pythonisti">
+<h2>Per i giovani pythonisti<a class="headerlink" href="#per-i-giovani-pythonisti" title="Link a questa intestazione">¶</a></h2>
+<p>Se non sapete cosa sono i decoratori, RTFM (Read the fucking manual)</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Tabella dei contenuti</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scripts/timeit.py</a><ul>
+<li><a class="reference internal" href="#per-i-giovani-pythonisti">Per i giovani pythonisti</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Questa pagina</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Scripts/timeit.txt"
+            rel="nofollow">Mostra sorgente</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Ricerca veloce</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Vai" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Inserisci un termine di ricerca un modulo, classe o nome di funzione
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, Energee3 srl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
+      
+      |
+      <a href="../_sources/Scripts/timeit.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

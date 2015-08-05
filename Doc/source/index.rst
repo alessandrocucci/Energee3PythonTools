@@ -3,12 +3,19 @@
 
 Energee3 Python Tools
 =====================
+.. image:: /img/cropped-header21.png
+    :align: center
+
 *Energee3 Python Tools* è un repository git creato per avere un insieme di strumenti (script, esempi e documentazione)
 di codice Python che possano tornarci utili nello sviluppo di codice in sede e/o presso clienti.
 
 Abbiamo voluto questo strumento in seguito a delle review di codice che doveva sottostare a rigorosi criteri di
 performance e stile, e lo scopo è fornire una piattaforma di consulting per tutti i colleghi Energee che si trovano
 (o si troveranno in futuro) a scrivere programmi in linguaggio Python.
+
+Indice della Documentazione
+---------------------------
+vai all':doc:`contents`
 
 Struttura del repository
 ------------------------
@@ -56,27 +63,11 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-What's New
-----------
+What's New in 0.0.1
+-------------------
 
 +------------------------+---------------------------------------------------------------+
 |        File            |                       Descrizione                             |
 +========================+===============================================================+
 | Scripts/timeit.py      | Misura/Confronta il tempo di esecuzione di una o più funzioni |
 +------------------------+---------------------------------------------------------------+
-
-
-
-.. toctree::
-
-   whatsnew/index.rst
-   tutorial/index.rst
-   installing/index.rst
-   howto/index.rst
-   faq/index.rst
-   glossary.rst
-
-   index.rst
-   contents.rst
-   license.rst
-

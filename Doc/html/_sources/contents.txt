@@ -1,16 +1,14 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- Energee3 Python Tools Documentation contents
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ Indice della Documentazione
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 .. toctree::
+   :maxdepth: 2
 
-   whatsnew/index.rst
-   tutorial/index.rst
-   installing/index.rst
-   howto/index.rst
-   faq/index.rst
-   glossary.rst
+   index
+   about
+   contribuire
+   copyright
 
-   index.rst
-   license.rst
 
+   Scripts/index

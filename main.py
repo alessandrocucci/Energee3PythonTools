@@ -20,7 +20,8 @@ import argparse
 
 
 def performance():
-    import timeit
+    from Scripts import timeit
+
     timeit.main()
 
 

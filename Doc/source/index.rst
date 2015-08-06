@@ -17,6 +17,18 @@ Indice della Documentazione
 ---------------------------
 vai all':doc:`contents`
 
+.. toctree::
+   :maxdepth: 2
+
+   about
+   contribuire
+   copyright
+
+
+   Scripts/index
+   CodeStyle/index
+   Strutture/index
+
 Struttura del repository
 ------------------------
 Energy3 Python Tools è composto da due macro sezioni:

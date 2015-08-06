@@ -12,3 +12,5 @@
 
 
    Scripts/index
+   CodeStyle/index
+   Strutture/index

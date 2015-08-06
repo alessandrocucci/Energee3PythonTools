@@ -72,7 +72,32 @@ che ci servono, vale a dire:</p>
 </ul>
 <div class="section" id="per-i-giovani-pythonisti">
 <h2>Per i giovani pythonisti<a class="headerlink" href="#per-i-giovani-pythonisti" title="Link a questa intestazione">¶</a></h2>
-<p>Se non sapete cosa sono i decoratori, RTFM (Read the fucking manual)</p>
+<p>Se non sapete cosa sono i decoratori, RTFM (Read the fucking manual). A parte gli scherzi, un decoratore è semplicemente
+una funzione che prende come argomento un&#8217;altra funzione, in modo da poterne modificare il comportamento. Il decoratore,
+una volta modificata la funzione passatagli, ritornerà quella funzione. Quindi attenzione, ripeto, normalmente
+il return del decoratore ritornerà la funzione (non il risultato della funzione!).</p>
+<p>Nel caso di timeit, il discorso è diverso. Il decoratore in realtà è un wrapper attorno alla funzione passatagli come
+argomento. A result, infatti, stiamo assegnando il risultato della funzione method, questo per permetterci di
+aggiungere codice in più a una funzione.
+La domanda ora sarà, perchè ho fatto questo invece di aggiungere tre righe di codice nella funzione che voglio
+misurare? Semplice, se voglio misurare il tempo di esecuzione di molte funzioni mi basterà applicare il decoratore invece
+di riscrivere ogni volta il codice in più, come da esempio:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">prova1</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">prova2</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Il risultato sarà il seguente:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python timeit.py
+&#39;prova1&#39; ((), {}) 0.000101 sec
+&#39;prova2&#39; ((), {}) 0.000051 sec
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -96,13 +121,6 @@ che ci servono, vale a dire:</p>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>Questa pagina</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/Scripts/timeit.txt"
-            rel="nofollow">Mostra sorgente</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Ricerca veloce</h3>
     <form class="search" action="../search.html" method="get">
@@ -127,9 +145,6 @@ che ci servono, vale a dire:</p>
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
-      |
-      <a href="../_sources/Scripts/timeit.txt"
-          rel="nofollow">Page source</a>
     </div>
 
     

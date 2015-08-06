@@ -27,6 +27,8 @@
     <link rel="author" title="A proposito di questi documenti" href="../about.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
     <link rel="top" title="Energee3 Python Tools 0.0.1 documentazione" href="../index.html" />
+    <link rel="next" title="PEP 8" href="pep8.html" />
+    <link rel="prev" title="Scripts" href="../Scripts/index.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -41,6 +43,36 @@
             
   <div class="section" id="python-code-style">
 <h1>Python Code Style<a class="headerlink" href="#python-code-style" title="Link a questa intestazione">¶</a></h1>
+<p><em>&#8220;One difference between a smart programmer and a professional programmer is that
+the professional understands that clarity is king. Professionals use their powers
+for good and write code that others can understand&#8221;.</em></p>
+<p>Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship</p>
+<p><em>&#8220;If the implementation is hard to explain, it&#8217;s a bad idea&#8221;.</em></p>
+<p>The Zen of Python</p>
+<p>In queste pagine, verranno inseriti esempi e indicazioni per scrivere codice python secondo standard di leggibilità
+e performance, imparati in seguito all&#8217;esperienza maturata sul campo sia sviluppando codice sia grazie al tempo
+che ci hanno dedicato esperti del settore correggendo i nostri lavori utilizzando strumenti di code review.</p>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Link a questa intestazione">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pep8.html">PEP 8</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#indentazione">Indentazione</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#imports">Imports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#whitespaces">Whitespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#operazioni-per-riga">Operazioni per riga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#commenti">Commenti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#naming-conventions">Naming Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep8.html#altre-raccomandazioni">Altre Raccomandazioni</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="antipatterns.html">Python Antipatterns</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="antipatterns.html#leggibilita">Leggibilità</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -48,20 +80,23 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Tabella dei contenuti</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Python Code Style</a><ul>
+<li><a class="reference internal" href="#indice">Indice</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../Scripts/index.html" title="capitolo precedente">Scripts</a></li>
+      <li>Next: <a href="pep8.html" title="capitolo successivo">PEP 8</a></li>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>Questa pagina</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/CodeStyle/index.txt"
-            rel="nofollow">Mostra sorgente</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Ricerca veloce</h3>
     <form class="search" action="../search.html" method="get">
@@ -86,9 +121,6 @@
       Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.6</a>
       
-      |
-      <a href="../_sources/CodeStyle/index.txt"
-          rel="nofollow">Page source</a>
     </div>
 
     

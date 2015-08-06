@@ -12,3 +12,7 @@ Elenco di Scripts
 +==========================+===============================================================+
 | :doc:`timeit`            | Misura/Confronta il tempo di esecuzione di una o più funzioni |
 +--------------------------+---------------------------------------------------------------+
+| commondict.py            | Script per vedere cos'hanno in comune due dizionari (Python3) |
++--------------------------+---------------------------------------------------------------+
+| iterare_al_contrario.py  | Script per iterare su una lista al contrario                  |
++--------------------------+---------------------------------------------------------------+

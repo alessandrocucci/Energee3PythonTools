@@ -18,8 +18,7 @@ Se stai leggendo questa pagina, probabilmente sei uno dei nostri. Quindi, se vuo
 dai un'occhiata alla pagina :doc:`contribuire` per informazioni su come fare. Nuove guide, scripts
 e tutorial sono sempre ben accetti!
 
-Ringraziamenti:
-
-* `Alessandro Cucci <http://www.alessandrocucci.it/>`_ per aver pensato e dato alla luce questo progetto.
-* Giovacchino Tesi per averlo sostenuto fin dal principio.
+.. Ringraziamenti:
+	* `Alessandro Cucci <http://www.alessandrocucci.it/>`_ per aver pensato e dato alla luce questo progetto.
+	* Giovacchino Tesi per averlo sostenuto fin dal principio.
 

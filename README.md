@@ -21,12 +21,6 @@ Principalmente questo repository si compone di due parti:
   * Esempi di codice riutilizzabile (algoritmi, strutture dati, design patterns)
   * Tools vari (performance, esempi)
 
-### What's New
-- Speed Test
-
-### Todo's
- - Iniziare a scrivere la documentazione
- - Creare un indice dettagliato
 
 
 

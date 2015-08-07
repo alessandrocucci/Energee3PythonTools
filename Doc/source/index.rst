@@ -22,6 +22,7 @@ vai all':doc:`contents`
 
    about
    contribuire
+   todo
    copyright
 
 

@@ -21,7 +21,6 @@ vai all':doc:`contents`
    :maxdepth: 2
 
    about
-   contribuire
    todo
    copyright
 

@@ -87,3 +87,6 @@ What's New in 0.0.1
 +--------------------------+---------------------------------------------------------------+
 | iterare_al_contrario.py  | Script per iterare su una lista al contrario                  |
 +--------------------------+---------------------------------------------------------------+
+| line_count.py            | Script per contare numero di file e numero di righe di codice |
+|                          | in un progetto.                                               |
++--------------------------+---------------------------------------------------------------+

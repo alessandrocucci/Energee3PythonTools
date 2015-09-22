@@ -28,6 +28,7 @@ vai all':doc:`contents`
    Scripts/index
    CodeStyle/index
    Strutture/index
+   unittest
 
 Struttura del repository
 ------------------------
@@ -47,7 +48,7 @@ Energy3 Python Tools è composto da due macro sezioni:
 
 Versione
 --------
-0.0.1
+0.0.6
 
 Licenza
 -------
@@ -75,7 +76,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-What's New in 0.0.5
+What's New in 0.0.6
 -------------------
 
 +--------------------------+---------------------------------------------------------------+
@@ -85,4 +86,6 @@ What's New in 0.0.5
 |                          | in un progetto.                                               |
 +--------------------------+---------------------------------------------------------------+
 | read_replace.py          | Script per printare, copiare o sostituire file a chunks       |
++--------------------------+---------------------------------------------------------------+
+| :doc:`unittest`          | Esempio di utilizzo di unittest                               |
 +--------------------------+---------------------------------------------------------------+

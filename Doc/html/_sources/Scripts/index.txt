@@ -19,3 +19,7 @@ Elenco di Scripts
 | line_count.py            | Script per contare numero di file e numero di righe di codice |
 |                          | in un progetto.                                               |
 +--------------------------+---------------------------------------------------------------+
+| read_replace.py          | Script per printare, copiare o sostituire file a chunks       |
++--------------------------+---------------------------------------------------------------+
+| :doc:`../unittest`       | Esempio di utilizzo di unittest                               |
++--------------------------+---------------------------------------------------------------+

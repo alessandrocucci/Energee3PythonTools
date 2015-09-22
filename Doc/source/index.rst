@@ -75,18 +75,14 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-What's New in 0.0.1
+What's New in 0.0.5
 -------------------
 
 +--------------------------+---------------------------------------------------------------+
 |        File              |                       Descrizione                             |
 +==========================+===============================================================+
-| Scripts/timeit.py        | Misura/Confronta il tempo di esecuzione di una o più funzioni |
-+--------------------------+---------------------------------------------------------------+
-| commondict.py            | Script per vedere cos'hanno in comune due dizionari (Python3) |
-+--------------------------+---------------------------------------------------------------+
-| iterare_al_contrario.py  | Script per iterare su una lista al contrario                  |
-+--------------------------+---------------------------------------------------------------+
 | line_count.py            | Script per contare numero di file e numero di righe di codice |
 |                          | in un progetto.                                               |
++--------------------------+---------------------------------------------------------------+
+| read_replace.py          | Script per printare, copiare o sostituire file a chunks       |
 +--------------------------+---------------------------------------------------------------+

@@ -16,3 +16,4 @@ Le cose da fare in realtà sono moltissime, quelle più urgenti sono:
 * Altro
 	* Decidere se tenere il repo su github o spostarlo da qualche parte in sede
 	* Allestire uno spazio web per ospitare i file html generati
+	* Spazio web: se si possono eseguire file python, aggiungere un repository viewer

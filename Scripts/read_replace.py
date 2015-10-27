@@ -11,7 +11,8 @@ Usage:
 	python read_replace.py --function "printer" --find "Buongiorno" -i "file_input.txt"
 
 """
-__author__ = 'davidecacciavillani'
+__author__ = 'davide.cacciavillani@energee3.com'
+__reviewer__ = 'alessandro.cucci@energee3.com'
 
 import argparse
 

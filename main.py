@@ -79,6 +79,8 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--performance', action='store_true',
                             help='Execute timeit.py script')
 
+    # TODO: Aggiungere gli altri
+
     parser.add_argument('--version', action='version', version=' '.join([__package_name__, __version__]))
 
     results = parser.parse_args()

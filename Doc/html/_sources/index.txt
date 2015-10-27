@@ -48,7 +48,7 @@ Energy3 Python Tools è composto da due macro sezioni:
 
 Versione
 --------
-0.0.6
+0.0.7
 
 Licenza
 -------
@@ -76,12 +76,15 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-What's New in 0.0.6
+What's New in 0.0.7
 -------------------
 
 +--------------------------+---------------------------------------------------------------+
 |        File              |                       Descrizione                             |
 +==========================+===============================================================+
+| scriptbaruffa.py         | Script per generare un file html contenente un libro di       |
+|                          | flylib.                                                       |
++--------------------------+---------------------------------------------------------------+
 | line_count.py            | Script per contare numero di file e numero di righe di codice |
 |                          | in un progetto.                                               |
 +--------------------------+---------------------------------------------------------------+

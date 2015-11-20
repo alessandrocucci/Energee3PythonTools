@@ -31,3 +31,6 @@ Elenco di Script
 | BaruffaBooks/scriptbaruffa.py | Script per generare un file html contenente un libro di       |
 |                               | flylib.                                                       |
 +-------------------------------+---------------------------------------------------------------+
+| GoogleDriveApi/main.py        | Script per leggere un file csv da Google Drive e              |
+|                               | parsarne il contenuto                                         |
++-------------------------------+---------------------------------------------------------------+

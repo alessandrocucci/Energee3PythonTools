@@ -128,3 +128,75 @@ Proviamo invece a usare un metodo diverso:
     print name.first, name.last, name.role
 
 Molto, molto meglio!
+
+
+Prendere il primo valore da una list-comprehension o da un ciclo for
+--------------------------------------------------------------------
+Prendiamo questo codice di esempio:
+::
+	not_found = -1
+
+	def match(elemento, valore):
+		if elemento == valore:
+			return True
+		return False
+
+	dispari = [x for x in xrange(10) if x % 2]
+	print "dispari = ", dispari
+	for elemento in dispari:
+		if match(elemento, 1):
+			print elemento
+			break
+	else:
+		print not_found
+
+	pari = [x for x in xrange(10) if x % 2 == 0]
+	print "pari = ", pari
+	for elemento in pari:
+		if match(elemento, 1):
+			print elemento
+			break
+	else:
+		print not_found
+
+	tupla = (1, 2, 3, 1, 2, 3)
+	print "tupla = ", tupla
+	for elemento in tupla:
+		if match(elemento, 1):
+			print elemento
+			break
+	else:
+		print not_found
+
+
+Stiamo cercando dentro degli iterabili il primo valore x (in questo caso x == 1).
+Questo codice stamperà il seguente risultato:
+::
+	dispari =  [1, 3, 5, 7, 9]
+	1
+	pari =  [0, 2, 4, 6, 8]
+	-1
+	tupla =  (1, 2, 3, 1, 2, 3)
+	1
+
+
+Essendo come detto sopra tre **iterabili**, hanno tutti un bel metodo builtin che si chiama **next()**:
+questo metodo applicato a un elemento dell'iterabile, restituisce il successivo (attenzione, se l'elemento a cui
+si applica next è l'ultimo dell'iterabile, verrà sollevata un'eccezione di tipo StopIteration).
+
+Usando questo metodo, possiamo riscrivere il programma di cui sopra come segue (faccio solo un esempio ma vale per
+tutti e tre i cicli for):
+::
+	tupla = (1, 2, 3, 1, 2, 3)
+	try:
+		print next((x for x in tupla if match(x, 1)))
+	except StopIteration:
+		print not_found
+
+
+Meglio ancora, possiamo passare un valore di default a next():
+::
+	tupla = (1, 2, 3, 1, 2, 3)
+	print next((x for x in tupla if match(x, 1)), not_found)
+
+

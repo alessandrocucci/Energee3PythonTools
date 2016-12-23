@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scripts/timeit.py &#8212; Energee3 Python Tools 0.0.1 documentazione</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="author" title="A proposito di questi documenti" href="../about.html" />
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="scripts-timeit-py">
+<h1>Scripts/timeit.py<a class="headerlink" href="#scripts-timeit-py" title="Link a questa intestazione">¶</a></h1>
+<p>Timeit è uno script che potrebbe tornarci utile quando vogliamo misurare il tempo di esecuzione di una o più funzioni.
+Personalmente lo uso spesso per confrontare due o più metodi che restituiscono la stessa cosa per vedere quale è
+il più performante.</p>
+<p>NB Lo script, così com&#8217;è, è valido solo per <strong>Python 2.7</strong>, non sarà tuttavia impegnativo modificarlo per farlo girare
+sulle vesioni successive.</p>
+<p>Il codice consiste nel creare un decoratore che stampi il tempo di esecuzione della funzione decorata:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">timed</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="n">te</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+        <span class="nb">print</span> <span class="s1">&#39;</span><span class="si">%r</span><span class="s1"> (</span><span class="si">%r</span><span class="s1">, </span><span class="si">%r</span><span class="s1">) </span><span class="si">%2.6f</span><span class="s1"> sec&#39;</span> <span class="o">%</span> \
+              <span class="p">(</span><span class="n">method</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">te</span><span class="o">-</span><span class="n">ts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">return</span> <span class="n">timed</span>
+</pre></div>
+</div>
+<p>Molto semplice, in ts (time start) salviamo il tempo nell&#8217;istante prima di chiamare il metodo,
+poi, una volta eseguito il metodo, salviamo in te (time end) il nuovo tempo. A questo punto stamperemo le informazioni
+che ci servono, vale a dire:</p>
+<ul class="simple">
+<li>nome del metodo decorato</li>
+<li>argomenti passati</li>
+<li>keywords</li>
+<li><strong>tempo di esecuzione</strong> (te-ti)</li>
+</ul>
+<div class="section" id="per-i-giovani-pythonisti">
+<h2>Per i giovani pythonisti<a class="headerlink" href="#per-i-giovani-pythonisti" title="Link a questa intestazione">¶</a></h2>
+<p>Se non sapete cosa sono i decoratori, RTFM (Read the fucking manual). A parte gli scherzi, un decoratore è semplicemente
+una funzione che prende come argomento un&#8217;altra funzione, in modo da poterne modificare il comportamento. Il decoratore,
+una volta modificata la funzione passatagli, ritornerà quella funzione. Quindi attenzione, ripeto, normalmente
+il return del decoratore ritornerà la funzione (non il risultato della funzione!).</p>
+<p>Nel caso di timeit, il discorso è diverso. Il decoratore in realtà è un wrapper attorno alla funzione passatagli come
+argomento. A result, infatti, stiamo assegnando il risultato della funzione method, questo per permetterci di
+aggiungere codice in più a una funzione.
+La domanda ora sarà, perchè ho fatto questo invece di aggiungere tre righe di codice nella funzione che voglio
+misurare? Semplice, se voglio misurare il tempo di esecuzione di molte funzioni mi basterà applicare il decoratore invece
+di riscrivere ogni volta il codice in più, come da esempio:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">prova1</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+
+
+<span class="nd">@timeit</span>
+<span class="k">def</span> <span class="nf">prova2</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Il risultato sarà il seguente:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python timeit.py
+&#39;prova1&#39; ((), {}) 0.000101 sec
+&#39;prova2&#39; ((), {}) 0.000051 sec
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Energee3 Python Tools</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigazione</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Info su questa Documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CodeStyle/index.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Strutture/index.html">Strutture Dati Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unittest.html">Unit Testing</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Ricerca veloce</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Vai" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Energee3 srl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/alessandrocucci/Energee3PythonTools" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

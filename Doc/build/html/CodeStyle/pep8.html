@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PEP 8 &#8212; Energee3 Python Tools 0.0.1 documentazione</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="author" title="A proposito di questi documenti" href="../about.html" />
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Python Antipatterns" href="antipatterns.html" />
+    <link rel="prev" title="Python Code Style" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pep-8">
+<h1>PEP 8<a class="headerlink" href="#pep-8" title="Link a questa intestazione">¶</a></h1>
+<p>La community ci ha lasciato un documento che ogni programmatore Python dovrebbe conoscere a memoria: la PEP8.
+Acronimo di Python Enhancement Proposal, la numero 8 si riferisce in particolare alla guida di stile nella scrittura
+di codice Python. Un codice, una volta scritto, testato e rilasciato, verrà letto molte volte, e riscritto molte meno.
+Quindi, rendere il codice più leggibile possibile deve diventare prioritario. Qui riassumeremo le regole principali
+definite nella PEP8, se volete (dovete) conoscerle tutte, questo è il link al <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">documento originale</a>.</p>
+<div class="section" id="indentazione">
+<h2>Indentazione<a class="headerlink" href="#indentazione" title="Link a questa intestazione">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Si</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+
+
+<span class="c1"># No</span>
+<span class="k">def</span> <span class="nf">long_function_name</span><span class="p">(</span>
+    <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
+    <span class="n">var_four</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+
+<span class="c1"># Si</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;keyA&#39;</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;long_key_that_looks_odd&#39;</span><span class="p">:</span> <span class="s2">&quot;Don&#39;t add extra spaces&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;please_end_with&#39;</span><span class="p">:</span> <span class="s2">&quot;a comma&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">some_function_that_takes_arguments</span><span class="p">(</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Il metodo preferito di spezzare linee troppo lunghe è usare le parentesi. Le espressioni troppo lunghe possono essere
+racchiuse in parentesi. Andare a capo dopo l&#8217;operatore, non prima.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Blob</span><span class="p">):</span>
+
+<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">emphasis</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">highlight</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span>
+        <span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">and</span> <span class="n">emphasis</span> <span class="o">==</span> <span class="s1">&#39;strong&#39;</span> <span class="ow">or</span>
+        <span class="n">highlight</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;sorry, you lose&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">width</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">height</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">color</span> <span class="o">==</span> <span class="s1">&#39;red&#39;</span> <span class="ow">or</span>
+                                       <span class="n">emphasis</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;I don&#39;t think so -- values are </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+                         <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">))</span>
+    <span class="n">Blob</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span>
+                  <span class="n">color</span><span class="p">,</span> <span class="n">emphasis</span><span class="p">,</span> <span class="n">highlight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>Sempre in cima al file</li>
+<li><dl class="first docutils">
+<dt>raggruppati così (divisi con una riga vuota):</dt>
+<dd><ul class="first last">
+<li>Standard lib</li>
+<li>Librerie proprie e/o di terzi</li>
+<li>Applicazione corrente</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>NON USARE import-star (from module import <a href="#id1"><span class="problematic" id="id2">*</span></a>)</li>
+<li>salvo casi estremi non usare proprio il rename (import something as something_else)</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Yes:</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+
+<span class="c1"># No:</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">myclass</span> <span class="kn">import</span> <span class="n">MyClass</span> <span class="k">as</span> <span class="n">myclass_myclass</span>
+<span class="kn">from</span> <span class="nn">foo.bar.yourclass</span> <span class="kn">import</span> <span class="n">YourClass</span> <span class="k">as</span> <span class="n">Bar_YourClass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="whitespaces">
+<h2>Whitespaces<a class="headerlink" href="#whitespaces" title="Link a questa intestazione">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Appena entro le parentesi:</span>
+<span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span> <span class="c1"># No</span>
+<span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span> <span class="c1"># Yes</span>
+
+<span class="c1"># Appena prima di virgole o due punti</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">:</span> <span class="k">print</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="c1"># No</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="k">print</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="c1"># Yes</span>
+
+<span class="c1"># Appena prima delle parentesi nell&#39;invocazione di una funzione:</span>
+<span class="n">spam</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># No</span>
+<span class="n">spam</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Yes</span>
+
+<span class="c1"># Appena prima delle quadre (chiavi o indici)</span>
+<span class="nb">dict</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="c1"># No</span>
+<span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="c1"># Yes</span>
+
+<span class="c1"># Spazi di troppo solo per allineare colonne</span>
+<span class="c1"># No:</span>
+<span class="n">x</span>         <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span>         <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_name</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1"># Yes:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_name</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Spazi in meno solo per sottolineare la precedenza degli operatori:</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># No</span>
+<span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> <span class="c1"># Yes</span>
+
+<span class="c1"># Niente spazi attorno ad &quot;=&quot; negli argomenti di una funzione:</span>
+<span class="c1"># No</span>
+<span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span> <span class="o">=</span> <span class="n">real</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">imag</span><span class="p">)</span>
+<span class="c1"># Yes</span>
+<span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">real</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">imag</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operazioni-per-riga">
+<h2>Operazioni per riga<a class="headerlink" href="#operazioni-per-riga" title="Link a questa intestazione">¶</a></h2>
+<p>UNA (1)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># NO NO NO NO NO</span>
+<span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;blah&#39;</span><span class="p">:</span> <span class="n">do_blah_thing</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">try</span><span class="p">:</span> <span class="n">something</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span> <span class="n">cleanup</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">foo</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="n">one</span><span class="p">();</span> <span class="n">two</span><span class="p">();</span> <span class="n">three</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="commenti">
+<h2>Commenti<a class="headerlink" href="#commenti" title="Link a questa intestazione">¶</a></h2>
+<p>Frasi di senso compiuto.</p>
+<p>Meglio niente commenti che commenti sbagliati rispetto al codice.</p>
+<p>Usare pochi commenti in linea (alla destra della operazione), distanziarli di almeno due spazi rispetto al codice.</p>
+<p>Non descrivere cosa fa il codice, ma perché lo fa:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Aggiungo 1</span>
+<span class="c1"># Un commento cosi non aiuta. Meglio scrivere:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Pixel di compensazione per il bordo</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="naming-conventions">
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Link a questa intestazione">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># parole separate da underscore</span>
+<span class="n">variabili_comuni</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">COSTANTI</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span>
+<span class="n">GLOBALI</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span>
+
+<span class="k">def</span> <span class="nf">mio_metodo</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">nome_lungo</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Camel Case solo per i nomi di classe</span>
+<span class="k">class</span> <span class="nc">CamelCase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># In caso di sigle, tutte maiuscole:</span>
+<span class="k">class</span> <span class="nc">HTMLView</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># In caso di nomi che vanno in conflitto con nomi riservati per Python,</span>
+<span class="c1"># cercare di cambiare nome. In caso di assoluta necessita&#39;, usare un</span>
+<span class="c1"># trailing underscore:</span>
+<span class="n">modulo</span><span class="o">.</span><span class="n">metodo</span><span class="p">(</span><span class="s1">&#39;bagigio&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;MiaClasse&quot;</span><span class="p">)</span>
+
+<span class="c1"># NO</span>
+<span class="n">miaVariabile</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">MiaVariabile2</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="k">def</span> <span class="nf">FunzioneMetodo</span><span class="p">():</span>
+    <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">Funzione_Metodo</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="altre-raccomandazioni">
+<h2>Altre Raccomandazioni<a class="headerlink" href="#altre-raccomandazioni" title="Link a questa intestazione">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># test coi singleton: usare is</span>
+<span class="k">if</span> <span class="n">var</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Fare test lineari, preferire sempre il test &quot;positivo&quot;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">confirm</span><span class="p">(</span><span class="n">LABELS</span><span class="o">.</span><span class="n">CONFIRM_TO_NOT_CONTINUE</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">True</span><span class="p">:</span>  <span class="c1"># NO</span>
+    <span class="k">print</span> <span class="s2">&quot;Eh..?&quot;</span>
+
+<span class="c1"># Le sequenze vuote e i dizionari vuoti fanno false:</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">(),</span> <span class="p">{}):</span>
+    <span class="k">if</span> <span class="n">t</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Not possible!&quot;</span><span class="p">)</span>
+<span class="c1"># Inutile calcolarne la lunghezza:</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">()):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>  <span class="c1"># NO</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;No use for checking len()&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Controllo di tipo:</span>
+<span class="c1"># NO:</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">smt</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="c1"># Yes:</span>
+<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">smt</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="c1"># Eccezioni, try/except:</span>
+<span class="c1"># Definire sempre un errore che derivi da Exception oppure da una classe di errore</span>
+<span class="c1"># specifica del framework/progetto</span>
+<span class="k">class</span> <span class="nc">MyError</span><span class="p">(</span><span class="n">ApplicationError</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="c1"># Generalmente, limitare il codice dentro al blocco try al minimo necessario.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">do_something</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>  <span class="c1"># NO: il try si deve riferire a do_something oppure a float</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="c1"># Restringere sempre il genere di eccezioni intercettate</span>
+    <span class="k">raise</span> <span class="n">MyError</span><span class="p">(</span><span class="n">LABELS</span><span class="o">.</span><span class="n">ERROR</span><span class="p">)</span>
+
+
+<span class="c1"># Scorrendo una sequenza di sequenze, esplicitare cosa c&#39;e&#39; in ciascun elemento:</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">crea_ordine</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># NO: non so cosa item[0] e item[1] contengono.</span>
+
+<span class="k">for</span> <span class="n">modello</span><span class="p">,</span> <span class="n">numero_capi</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">crea_ordine</span><span class="p">(</span><span class="n">modello</span><span class="p">,</span> <span class="n">numero_capi</span><span class="p">)</span>  <span class="c1"># Yes</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Energee3 Python Tools</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigazione</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Info su questa Documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripts/index.html">Scripts</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python Code Style</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#indice">Indice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Strutture/index.html">Strutture Dati Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unittest.html">Unit Testing</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Python Code Style</a><ul>
+      <li>Previous: <a href="index.html" title="capitolo precedente">Python Code Style</a></li>
+      <li>Next: <a href="antipatterns.html" title="capitolo successivo">Python Antipatterns</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Ricerca veloce</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Vai" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Energee3 srl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/alessandrocucci/Energee3PythonTools" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

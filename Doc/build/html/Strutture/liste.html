@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Liste &#8212; Energee3 Python Tools 0.0.1 documentazione</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="author" title="A proposito di questi documenti" href="../about.html" />
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Unit Testing" href="../unittest.html" />
+    <link rel="prev" title="Strutture Dati Python" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="liste">
+<h1>Liste<a class="headerlink" href="#liste" title="Link a questa intestazione">¶</a></h1>
+<div class="section" id="nested-list-comprehension">
+<h2>Nested List Comprehension<a class="headerlink" href="#nested-list-comprehension" title="Link a questa intestazione">¶</a></h2>
+<p>Partiamo subito da esempi. Abbiamo due liste fatte così:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Mettiamo il caso che vorremmo una lista di tuple fatta in questo modo</p>
+<p>[(0, &#8216;a&#8217;), (0, &#8216;b&#8217;), ..., (1, &#8216;a&#8217;), (1, &#8216;b&#8217;), ... , (9, j)]</p>
+<p>per ottenerla scriveremo semplicemente:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list1</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">list2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>What the f**?
+In pratica stiamo facendo questo:</p>
+<ul class="simple">
+<li>Creiamo una lista, i cui elementi saranno tuple di due valori (x, y)</li>
+<li>Cicliamo lista1</li>
+<li>per ogni valore che troviamo in lista1 (x) cicliamo tutti gli elementi di lista2</li>
+<li>ogni volta che troviamo un nuovo valore in lista2 (y) creiamo una tupla con i valori (x, y)</li>
+<li>aggiungiamo alla lista finale questa tupla appena costruita</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Energee3 Python Tools</a></h1>
+
+
+
+
+
+
+
+
+
+
+<h3>Navigazione</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Info su questa Documentazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Todo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Scripts/index.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CodeStyle/index.html">Python Code Style</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Strutture Dati Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Liste</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../unittest.html">Unit Testing</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Strutture Dati Python</a><ul>
+      <li>Previous: <a href="index.html" title="capitolo precedente">Strutture Dati Python</a></li>
+      <li>Next: <a href="../unittest.html" title="capitolo successivo">Unit Testing</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Ricerca veloce</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Vai" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Energee3 srl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+    </div>
+
+    
+    <a href="https://github.com/alessandrocucci/Energee3PythonTools" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>

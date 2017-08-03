@@ -49,7 +49,7 @@ Facciamo un esempio. Per creare un test che verifichi una funzione di somma tra 
 		def test_prova_una_condizione_falsa(self):
 			self.assertFalse('foo'.isupper())
 
-		def test_prova_eccezzione(self):
+		def test_prova_eccezione(self):
 			with self.assertRaises(TypeError):
 				somma(1, "ciao")
 
@@ -59,7 +59,7 @@ Facciamo un esempio. Per creare un test che verifichi una funzione di somma tra 
 
 il risultato sarà:
 ::
-	test_prova_eccezzione (__main__.MyTest) ... ok
+	test_prova_eccezione (__main__.MyTest) ... ok
 	test_prova_una_condizione_falsa (__main__.MyTest) ... ok
 	test_prova_una_condizione_vera (__main__.MyTest) ... ok
 	test_somma_tra_due_interi (__main__.MyTest) ... ok
